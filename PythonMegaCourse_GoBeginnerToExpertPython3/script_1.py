@@ -18,3 +18,5 @@ print()
 print("Hello", end = " ")
 # it will print new line after printing "World"
 print("World")
+
+print("Something", "without", "sense", sep = "-")
