@@ -1,6 +1,3 @@
-from typing import final
-
-
 cars = {
     "BMW": 2012,
     "Honda": 2019,
