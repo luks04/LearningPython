@@ -19,3 +19,7 @@ s1 = slice(3)
 s2 = slice(1, 3, 2)
 print(var2[s1])
 print(var2[s2])
+
+cadena = 'Cualquier cosa'
+cadena_al_reves = cadena[::-1]
+print(cadena_al_reves)
