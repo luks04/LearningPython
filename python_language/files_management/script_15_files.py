@@ -1,3 +1,14 @@
+def foo_example():
+    file = None
+    file_path = ""
+
+    if file is not None:
+        # If the file exists, close it
+        file.close()
+    elif file_path is None:
+        # If the file path not exists, define it
+        file_path = './new_path'
+
 def files():
     # 'r' antes de definir una cadena de texto indica que esta debe interpretarse como un texto crudo
     with open(r'/Users/lucaspatino/Documents/Luks_Learning/Learning_Projects/example_file.txt', 'w') as file:
