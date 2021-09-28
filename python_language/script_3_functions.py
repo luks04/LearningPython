@@ -20,18 +20,38 @@ def lambda_function():
 print("----------------------------------------------------------------")
 
 def showEmployee(name, salary = 2000):
+    print(">>> Default args")
     print("Employee", name, "salary is:", salary)
 
-showEmployee("bob", 2000)
+showEmployee("bob", 4000)
 showEmployee("bob")
 
 print("----------------------------------------------------------------")
 
 def foo_args(*args):
-    print(args) 
+    print(">>> *args")
+    print(type(args), args)
+    print("args[1] -> ", args[1])
+
+foo_args(123, "example arg", {"obj1": [1, 2, 3, 4, 5]})
 
 print("----------------------------------------------------------------")
 
 def foo_kwargs(**kwargs):
+    print(">>> *kwargs")
     for key in kwargs:
         print(str(key) + " : " + str(kwargs[key]))
+
+foo_kwargs(number = 123, string = "example arg")
+
+def foo_all_args_example(a, b, c = 100, *args, **kwargs):
+    print("\n\n-----------------------------------------------------")
+    print(f"a -> {a}, b -> {b}, c -> {c}")
+    print(">>> *args")
+    print(type(args), args)
+    print("\n")
+    print(">>> *kwargs")
+    for key in kwargs:
+        print(str(key) + " : " + str(kwargs[key]))
+
+foo_all_args_example("val for a", "val for b", 300, ["a", "b", "c"], 5.2, number = 999, string = "example arg")
