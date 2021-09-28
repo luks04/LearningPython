@@ -42,17 +42,6 @@ if 50 | 100 == 50:
 elif 50 & 100 == 32:
     print("Something")
 
-
-file = None
-file_path = ""
-
-if file is not None:
-    # If the file exists, close it
-    file.close()
-elif file_path is None:
-    # If the file path not exists, define it
-    file_path = './new_path'
-
 ########################
 # HEXADECIMAL | BINARY # 
 #      0      |  0000  # 
