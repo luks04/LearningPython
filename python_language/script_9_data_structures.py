@@ -1,5 +1,5 @@
 from collections import deque
-from binarytree import Node
+#from binarytree import Node
 import random
 
 #########################################################################
@@ -39,6 +39,22 @@ my_list[1] = "Anything"
 print(my_list)
 my_list.remove("Anything")
 print(my_list)
+print("----------------------------------------------------------------")
+
+print("----------------------------------------------------------------")
+num_list = [x for x in range(20) if x % 2 == 0]
+print("List from for loop inside [] -> ", num_list)
+
+number_list = [x for x in range(20) if x % 2 == 0 if x % 5 == 0]
+print("List from for loop inside [] -> ", number_list)
+
+number_str_list = ['Good' if x % 3 == 0 else "Bad" for x in range(10)]
+print("List from for loop inside [] -> ", number_str_list)
+
+# Truncate a matrix using list comprehension
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+transpose = [[row[i] for row in matrix] for i in range(3)]
+print("Truncate a matrix using list comprehension -> ", transpose)
 print("----------------------------------------------------------------")
 
 print("----------------------------------------------------------------")
@@ -223,8 +239,8 @@ print(s1)
 #########################################################################
 print("\n\n============================ BINARY TREES ====================================\n")
 
-root = Node(3)
-root.left = Node(5)
-root.right = Node(9)
+#root = Node(3)
+#root.left = Node(5)
+#root.right = Node(9)
 
-print("Binary tree", root)
+#print("Binary tree", root)
