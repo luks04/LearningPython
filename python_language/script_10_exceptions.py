@@ -34,6 +34,31 @@ finally:
 
 print("----------------------------------------------------------------")
 
+class CustomException(Exception):
+    def __init__(self):
+        super()
+
+def foo_custom_exception():
+    while True:
+        try:
+            something = input("Enter a word that not starts with 'Z': \n")
+            if something.startswith("Z"):
+                raise CustomException
+        except CustomException:
+            # Example
+            print(f"ERROR: It should not start with 'Z'")
+        except Exception as error:
+            print(f"ERROR: Try again \n{error}")
+        else:
+            print("Good word!")
+            break
+        finally:
+            print("End of cycle")
+
+foo_custom_exception()
+
+print("----------------------------------------------------------------")
+
 def foo_exception_example():
     while True:
         try:
@@ -52,4 +77,4 @@ def foo_exception_example():
         finally:
             print("End of cycle")
 
-foo_exception_example()
+#foo_exception_example()
