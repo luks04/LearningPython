@@ -19,7 +19,7 @@ def files():
         print(file.read())
     with open(r'/Users/lucaspatino/Documents/Luks_Learning/Learning_Projects/example_file.txt', 'r') as file:
         print(file.readlines())
-    with open(r'/Users/lucaspatino/Documents/Luks_Learning/Learning_Projects/example_file.txt', 'r') as file:
+    with open(r'/Users/lucaspatino/Documents/Luks_Learning/Learning_Projects/example_file.txt', 'rb') as file:
         for linea in file:
             print(linea)
     with open(r'/Users/lucaspatino/Documents/Luks_Learning/Learning_Projects/example_file.txt', 'r') as file:
@@ -28,6 +28,16 @@ def files():
             palabras_linea = linea.split()
             palabras.extend(palabras_linea[:])
         print(palabras)
+
+'''
+'r' -> Open a file for reading (default)
+'w' -> Open a file for writing
+'x' -> Open a file for exclusive creation. If the file already exists, the operation fails
+'a' -> Open a file for appending at the end of the file. Creates a new file if it does not exist
+'+' -> Open a file for updating (reading and writing)
+'t' -> Open file in text mode (default)
+'b' -> Open file in binary mode
+'''
 
 if __name__ == "__main__":
     files()
