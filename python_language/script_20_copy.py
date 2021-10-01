@@ -2,7 +2,7 @@ import copy
 
 def example_shallow_copy():
     old_list = [[1, 1, 1], [2, 2, 2], [3, 3, 3], [4, 4, 4], [5, 5, 5]]
-    new_list = copy.copy(old_list)
+    new_list = old_list.copy()
 
     print(old_list)
     print(new_list)
