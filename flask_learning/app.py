@@ -1,4 +1,4 @@
-from flask import Flask, session, render_template
+from flask import Flask, session, render_template, redirect, url_for
 from url_building import url_building
 from cookies import cookies
 from static_files import static_files
@@ -21,6 +21,8 @@ app.register_blueprint(auth)
 def index():
     if 'username' in session:
         username = session['username']
+        if username == 'admin':
+            return redirect(url_for('auth.admin_index'))
         return f'<h2>Logged in as {username}</h2><br/>' + \
                 '<b><a href="/logout">Click here to logout</a></b>'
     return f'<h2>You are not logged in</h2><br/>' + \
