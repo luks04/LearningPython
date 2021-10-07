@@ -1,18 +1,32 @@
-from flask import Flask, render_template
-from http_methods import http_methods
+from flask import Flask, session, render_template
 from url_building import url_building
 from cookies import cookies
 from static_files import static_files
+from auth import auth
 
 app = Flask(__name__)
-app.register_blueprint(http_methods)
 app.register_blueprint(url_building)
 app.register_blueprint(cookies)
 app.register_blueprint(static_files)
 
+########################################################################
+############################# FOR SESSIONS #############################
+########################################################################
+
+# Random secure string
+app.secret_key = 'r4nd0m_53cur3_57r1ng'
+app.register_blueprint(auth)
+
 @app.route("/")
 def index():
-    return render_template("index.html")
+    if 'username' in session:
+        username = session['username']
+        return f'<h2>Logged in as {username}</h2><br/>' + \
+                '<b><a href="/logout">Click here to logout</a></b>'
+    return f'<h2>You are not logged in</h2><br/>' + \
+            '<b><a href="/login">Click here to login</a></b>'
+
+########################################################################
 
 @app.route("/hello_world")
 def hello_world():
