@@ -1,5 +1,5 @@
 import re
-from flask import Blueprint, session, redirect, url_for, request, render_template, abort
+from flask import Blueprint,request, render_template
 from flask.helpers import flash
 
 flash_messages = Blueprint('flash_messages', __name__)
