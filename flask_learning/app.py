@@ -7,6 +7,7 @@ from flash_messages import flash_messages
 import os
 from werkzeug import *
 from werkzeug.utils import secure_filename
+from flask_mail import Mail, Message
 
 UPLOAD_FOLDER_PATH = r'/uploaded_files/'
 ALLOWED_EXTENSIONS = {'txt', 'png', 'jpg', 'jpeg'} # Set
@@ -18,6 +19,12 @@ app.register_blueprint(static_files)
 app.register_blueprint(flash_messages)
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER_PATH
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = 'email@gmail.com'
+app.config['MAIL_PASSWORD'] = '**********'
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
 
 ########################################################################
 ############################# FOR SESSIONS #############################
@@ -59,6 +66,21 @@ def uploader():
         if file and allowed_file(filename):
             file.save(os.getcwd() + app.config['UPLOAD_FOLDER'] + filename)
             return 'File uploaded successfully!'
+
+########################################################################
+############################### FOR MAIL ###############################
+########################################################################
+
+mail = Mail(app)
+
+@app.route("/send_mail/<mail_title>/<mail_content>")
+def send_mail(mail_title: str, mail_content: str):
+    msg = Message(mail_title, 
+                  sender = app['MAIL_USERNAME'], 
+                  recipients = ['example@gmail.com', 'example@outlook.com'])
+    msg.body = mail_content
+    mail.send(msg)
+    return "Sending mail..."
 
 ########################################################################
 
