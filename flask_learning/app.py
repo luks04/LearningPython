@@ -3,11 +3,13 @@ from url_building import url_building
 from cookies import cookies
 from static_files import static_files
 from auth import auth
+from flash_messages import flash_messages
 
 app = Flask(__name__)
 app.register_blueprint(url_building)
 app.register_blueprint(cookies)
 app.register_blueprint(static_files)
+app.register_blueprint(flash_messages)
 
 ########################################################################
 ############################# FOR SESSIONS #############################

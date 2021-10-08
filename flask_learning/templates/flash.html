@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Flash message form</h1>
+        <form method="POST" action="">
+            <p>Password:<input type="password" name="password" /></p>
+            <p><input type="submit" value="Test password" /></p>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{message}}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            {% endwith %}
+        </form>
+    </body>
+</html>
