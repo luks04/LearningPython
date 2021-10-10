@@ -4,6 +4,7 @@ from cookies import cookies
 from static_files import static_files
 from auth import auth
 from flash_messages import flash_messages
+from db_api_example import db_api_example
 import os
 from werkzeug import *
 from werkzeug.utils import secure_filename
@@ -17,6 +18,7 @@ app.register_blueprint(url_building)
 app.register_blueprint(cookies)
 app.register_blueprint(static_files)
 app.register_blueprint(flash_messages)
+app.register_blueprint(db_api_example)
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER_PATH
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
