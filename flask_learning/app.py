@@ -9,6 +9,7 @@ import os
 from werkzeug import *
 from werkzeug.utils import secure_filename
 from flask_mail import Mail, Message
+from database import db
 
 UPLOAD_FOLDER_PATH = r'/uploaded_files/'
 ALLOWED_EXTENSIONS = {'txt', 'png', 'jpg', 'jpeg'} # Set
@@ -21,6 +22,10 @@ app.register_blueprint(flash_messages)
 app.register_blueprint(db_api_example)
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER_PATH
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////absolute/path/to/file.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db.init_app(app)
+
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USERNAME'] = 'email@gmail.com'
