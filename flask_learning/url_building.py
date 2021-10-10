@@ -23,8 +23,7 @@ def hello_user(name: str):
 @url_building.errorhandler(404)
 def not_found(error = None):
     response = jsonify({
-        'message': 'Resource not found ' + request.url,
-        'status': 404,
+        'message': 'Resource not found ' + request.url
     })
     response.status_code = 404
     return response
