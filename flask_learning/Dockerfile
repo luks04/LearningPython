@@ -9,5 +9,6 @@ RUN pip install Werkzeug
 RUN pip install pymongo
 RUN pip install flask_sqlalchemy
 RUN pip install flask_mail
+RUN cd flask_learning
 
 ENTRYPOINT ["python", "app.py"]
