@@ -100,4 +100,4 @@ def hello(name: str, city: str, id: int):
     return render_template("hello.html", name = name, city = city, id = id)
 
 if __name__ == '__main__':
-    app.run(host = '0.0.0.0', port = 5000, debug = True)
+    app.run(host = '0.0.0.0', port = 5000, debug = False)
