@@ -17,5 +17,5 @@ RUN pip install flask_mail
 
 # CMD exec gunicorn --bind :8080 --workers 1 --threads 8 app:app
 # CMD gunicorn app:app -w 2 --threads 2 -b 0.0.0.0:8080
-ENTRYPOINT ["./gunicorn_starter.sh"]
+ENTRYPOINT ["gunicorn_starter.sh"]
 # ENTRYPOINT ["python", "flask_learning/app.py"]
