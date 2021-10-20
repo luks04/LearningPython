@@ -14,7 +14,7 @@ RUN pip install flask_sqlalchemy
 RUN pip install flask_mail
 
 RUN pip install waitress
-RUN waitress-serve --call 'flaskr:create_app'
+RUN waitress-serve --call 'python app.py'
 
 # CMD gunicorn app:app -w 2 --threads 2 -b 0.0.0.0:8080
 # ENTRYPOINT ["python", "app.py"]
