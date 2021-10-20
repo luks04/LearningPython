@@ -12,7 +12,5 @@ RUN pip install flask_mail
 
 RUN cd flask_learning
 
-ENV PORT 8080
-
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 app:app
+CMD exec gunicorn --bind :8080 --workers 1 --threads 8 app:app
 # ENTRYPOINT ["python", "flask_learning/app.py"]
