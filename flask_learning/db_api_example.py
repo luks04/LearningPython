@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 import sqlite3
-from models.student import User
-from database import db
+from flask_learning.models.student import User
+from flask_learning.database import db
 
 db_api_example = Blueprint('db_api_example', __name__)
 

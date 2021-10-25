@@ -1,15 +1,15 @@
 from flask import Flask, session, render_template, redirect, url_for, request
-from url_building import url_building
-from cookies import cookies
-from static_files import static_files
-from auth import auth
-from flash_messages import flash_messages
-from db_api_example import db_api_example
+from flask_learning.url_building import url_building
+from flask_learning.cookies import cookies
+from flask_learning.static_files import static_files
+from flask_learning.auth import auth
+from flask_learning.flash_messages import flash_messages
+from flask_learning.db_api_example import db_api_example
 import os
 from werkzeug import *
 from werkzeug.utils import secure_filename
 from flask_mail import Mail, Message
-from database import db
+from flask_learning.database import db
 
 UPLOAD_FOLDER_PATH = r'/uploaded_files/'
 ALLOWED_EXTENSIONS = {'txt', 'png', 'jpg', 'jpeg'} # Set
