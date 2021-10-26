@@ -11,42 +11,36 @@ It has many examples of using python:
 
 ## Flask app
 It contains a Flask app too with some templates and API Rest services examples. 
-Including cookies, sessions, HTTP protocol and SQLALchemy
+Including cookies, sessions, HTTP protocol and SQLALchemy.
 
-To deploy the app on a production environment it is recommended to use Gunicorn.
-1. Delete Heroku remote old repository
+## Docker Deployment in Heroku
+Heroku CLI needed.
+The Flask app is containerized using Docker, so to deploy the app in a production environment it is recommended to use Gunicorn.
+
+1. Clone the repo, checkout to the "main-docker" branch and login into Heroku CLI:
+```sh
+git clone https://github.com/luks04/LearningPython.git
+cd LearningPython
+git checkout main-docker
+heroku login
+```
+2. Delete Heroku remote old repository:
 ```sh
 git remote rm heroku
 ```
-2. Check remote repositories
+3. Check remote repositories:
 ```sh
 git remote -v
 ```
-3. Deploy the app with Procfile and gunicorn
+4. Deploy the app with a Procfile using gunicorn:
 ```sh
-heroku login
+heroku create <app_name>
+heroku stack:set container
 git add .
 git commit -m "<commit message>"
 git push heroku <source_branch>:main
 ```
-
-Use this comand to try the app locally
+5. To show the logs use the next command:
 ```sh
-heroku local
-```
-## Docker
-The Flask app is containerized using Docker.
-To deploy with Docker on Heroku (Heroku CLI needed):
-
-```sh
-heroku login
-git add .
-git commit -m "<commit message>"
-heroku stack:set container
-git push heroku <source_branch>:master
-```
-
-To show the logs
-```
 heroku logs --tail
 ```
