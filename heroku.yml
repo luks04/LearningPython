@@ -1,3 +1,5 @@
 build:
   docker:
     web: Dockerfile
+    database: database/Dockerfile
+    logs: logs/Dockerfile
