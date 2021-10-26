@@ -3,3 +3,6 @@ build:
     web: Dockerfile
     database: database/Dockerfile
     logs: logs/Dockerfile
+run:
+  web: gunicorn app:app
+  database: gunicorn database_app:database_app

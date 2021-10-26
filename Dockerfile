@@ -10,4 +10,4 @@ RUN pip install --upgrade pip
 RUN pip install Flask
 RUN pip install gunicorn
 
-CMD gunicorn app:app
+# CMD gunicorn app:app
