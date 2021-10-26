@@ -47,22 +47,6 @@ git push heroku <source_branch>:main
 ```sh
 heroku logs --tail
 ```
-## Docker
-The Flask app is containerized using Docker.
-To deploy with Docker on Heroku (Heroku CLI needed):
-
-```sh
-heroku login
-git add .
-git commit -m "<commit message>"
-heroku stack:set container
-git push heroku <source_branch>:master
-```
-
-To show the logs
-```
-heroku logs --tail
-```
 
 > Note: Use the next commands to upload changes to Heroku server: 
 `Heroku remote repo and Heroku login is required`
