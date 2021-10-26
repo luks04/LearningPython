@@ -32,7 +32,7 @@ git remote rm heroku
 ```sh
 git remote -v
 ```
-4. Deploy the app with a Procfile using gunicorn:
+4. Deploy the app with a Dockerfile using gunicorn and a heroku.yml:
 ```sh
 heroku create <app_name>
 heroku stack:set container
