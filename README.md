@@ -44,3 +44,11 @@ git push heroku <source_branch>:main
 ```sh
 heroku logs --tail
 ```
+
+> Note: Use the next commands to upload changes to Heroku server: 
+`Heroku remote repo and Heroku login is required`
+```sh
+git add .
+git commit -m "<commit message>"
+git push heroku <source_branch>:main
+```
