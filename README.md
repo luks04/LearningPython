@@ -19,8 +19,8 @@ To deploy the app in a production environment it is recommended to use Gunicorn.
 
 1. Clone the repo, checkout to the "main-gunicorn" branch and login into Heroku CLI:
 ```sh
-git clone https://github.com/luks04/LearningPython.git
-cd LearningPython
+git clone https://github.com/luks04/learning_python_and_flask.git
+cd learning_python_and_flask
 git checkout main-gunicorn
 heroku login
 ```
