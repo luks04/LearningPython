@@ -19,8 +19,8 @@ The Flask app is containerized using Docker, so to deploy the app in a productio
 
 1. Clone the repo, checkout to the "main-docker" branch and login into Heroku CLI:
 ```sh
-git clone https://github.com/luks04/LearningPython.git
-cd LearningPython
+git clone https://github.com/luks04/learning_python_and_flask.git
+cd learning_python_and_flask
 git checkout main-docker
 heroku login
 ```
