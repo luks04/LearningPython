@@ -1,7 +1,7 @@
 # A Dockerfile specifies how to build a Docker image
 
 # Create a ubuntu base image with python 3 installed.
-FROM continuumio/miniconda3
+FROM heroku/miniconda
 
 ADD . /home/app_name
 WORKDIR /home/app_name
