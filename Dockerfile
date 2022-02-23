@@ -1,24 +1,24 @@
 # A Dockerfile specifies how to build a Docker image
 
 # Create a ubuntu base image with python 3 installed.
-FROM heroku/miniconda
+FROM python:3.8
 
 ADD . /home/app_name
 WORKDIR /home/app_name
 
-# Creates venv
-RUN conda env create -n app_name_env
+# Upgrade pip
+RUN pip install --upgrade pip
 
-# Activate venv
-RUN conda activate app_name_env
+# Create venv
+RUN python3 -m venv app_name_env
 
 # Install packages inside created venv
-RUN conda install Flask
-RUN conda install gunicorn
-RUN conda install Werkzeug
-RUN conda install pymongo
-RUN conda install flask_sqlalchemy
-RUN conda install flask_mail
+RUN python3 -m pip install Flask
+RUN python3 -m pip install gunicorn
+RUN python3 -m pip install Werkzeug
+RUN python3 -m pip install pymongo
+RUN python3 -m pip install flask_sqlalchemy
+RUN python3 -m pip install flask_mail
 
 # gunicorn <module_name> : <callable_element_name_within_the_application>
 CMD gunicorn app:app
