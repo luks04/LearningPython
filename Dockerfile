@@ -9,12 +9,12 @@ WORKDIR /home/app_name
 RUN pip install --upgrade pip
 RUN python3 -m venv app_name_env
 
-RUN python -m pip install Flask
-RUN python -m pip install gunicorn
-RUN python -m pip install Werkzeug
-RUN python -m pip install pymongo
-RUN python -m pip install flask_sqlalchemy
-RUN python -m pip install flask_mail
+RUN python3 -m pip install Flask
+RUN python3 -m pip install gunicorn
+RUN python3 -m pip install Werkzeug
+RUN python3 -m pip install pymongo
+RUN python3 -m pip install flask_sqlalchemy
+RUN python3 -m pip install flask_mail
 
 # gunicorn <module_name> : <callable_element_name_within_the_application>
-CMD gunicorn main:main
+CMD gunicorn app:app
