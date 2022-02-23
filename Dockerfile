@@ -13,7 +13,7 @@ RUN pip install --upgrade pip
 RUN python3 -m venv app_name_env
 
 # Activate venv
-RUN app_name_env\Scripts\activate.bat
+RUN app_name_env/bin/activate
 
 # Install packages inside created venv
 RUN python3 -m pip install Flask
