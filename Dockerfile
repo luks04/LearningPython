@@ -17,4 +17,4 @@ RUN pip install flask_sqlalchemy
 RUN pip install flask_mail
 
 # gunicorn <module_name> : <callable_element_name_within_the_application>
-CMD gunicorn app:app
+CMD gunicorn main:app
