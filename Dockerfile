@@ -19,8 +19,5 @@ RUN pip install pymongo
 RUN pip install flask_sqlalchemy
 RUN pip install flask_mail
 
-# Expose the required port
-EXPOSE 8080
-
 # gunicorn <module_name> : <callable_element_name_within_the_application>
 CMD gunicorn main:app
