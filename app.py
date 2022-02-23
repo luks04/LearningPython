@@ -98,3 +98,7 @@ def hello_world():
 @app.route("/hello/<name>/<city>/<int:id>")
 def hello(name: str, city: str, id: int):
     return render_template("hello.html", name = name, city = city, id = id)
+
+if __name__ == '__main__':
+    port = os.environ.get('PORT', 8080) # Heroku will set the PORT environment variable
+    app.run(host = '0.0.0.0', port = port, debug = False) # Set debug to False before deployment
