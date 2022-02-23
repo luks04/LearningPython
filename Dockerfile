@@ -6,9 +6,16 @@ FROM python:3.8
 ADD . /home/app_name
 WORKDIR /home/app_name
 
+# Upgrade pip
 RUN pip install --upgrade pip
+
+# Creates venv
 RUN python3 -m venv app_name_env
 
+# Activate venv
+RUN app_name_env\Scripts\activate.bat
+
+# Install packages inside created venv
 RUN python3 -m pip install Flask
 RUN python3 -m pip install gunicorn
 RUN python3 -m pip install Werkzeug
