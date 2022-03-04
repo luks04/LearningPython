@@ -9,5 +9,7 @@ RUN pip install --upgrade pip
 
 RUN pip install Flask
 RUN pip install gunicorn
+RUN pip install requests
+RUN pip install rq
 
 # CMD gunicorn app:app

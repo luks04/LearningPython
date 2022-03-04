@@ -9,5 +9,6 @@ RUN pip install --upgrade pip
 
 RUN pip install Flask
 RUN pip install gunicorn
+RUN pip install rq
 
 CMD gunicorn logs_app:logs_app
