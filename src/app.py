@@ -2,7 +2,7 @@ import os
 from rq import Queue
 from logs.logs_app import conn
 from flask import Flask, jsonify
-from ..utils import count_words_at_url
+import requests
 
 app = Flask(__name__)
 q = Queue(connection = conn)
@@ -21,6 +21,13 @@ def api_app():
 @app.route("/test_app")
 def test_app():
     return "<p>Hello World from Docker 1</p>"
+
+def count_words_at_url(url):
+    """Heroku example
+    Read more https://devcenter.heroku.com/articles/python-rq
+    """
+    resp = requests.get(url)
+    return len(resp.text.split())
 
 @app.route("/test_worker")
 def test_worker():
