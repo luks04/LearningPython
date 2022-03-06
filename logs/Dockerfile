@@ -1,14 +1,13 @@
-# A Dockerfile specifies how to build a Docker image
-FROM python:3.7
+FROM python:3.9.7-slim-buster
 
 ADD . /logs_app
 WORKDIR /logs_app
 
-RUN python3 -m venv env
-RUN pip install --upgrade pip
+RUN apt update \
+    && apt install -y \
+    wget \
+    nano \
+    build-essential \
+    python-dev
 
-RUN pip install Flask
-RUN pip install gunicorn
-RUN pip install rq
-
-CMD gunicorn logs_app:logs_app
+RUN pip install --use-feature=fast-deps --no-cache-dir --use-deprecated=legacy-resolver -r requirements.txt
