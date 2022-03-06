@@ -11,3 +11,5 @@ RUN apt update \
     python-dev
 
 RUN pip install --no-cache-dir --use-deprecated=legacy-resolver -r requirements.txt
+
+CMD gunicorn logs_app:logs_app
