@@ -5,4 +5,4 @@ WORKDIR /app
 
 RUN pip install uwsgi==2.0.19.1
 
-RUN pip install --use-feature=fast-deps --no-cache-dir --use-deprecated=legacy-resolver -r requirements.txt
+RUN pip install --no-cache-dir --use-deprecated=legacy-resolver -r requirements.txt
