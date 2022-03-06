@@ -4,5 +4,5 @@ build:
     database: database/Dockerfile
     worker: logs/Dockerfile
 run:
-  # web: gunicorn app:app
+  web: gunicorn app:app
   worker: python logs_app.py
