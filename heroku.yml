@@ -1,8 +1,8 @@
 build:
   docker:
     web: src/Dockerfile
-    database: database/Dockerfile
-    worker: logs/Dockerfile
+    # database: database/Dockerfile
+    # worker: logs/Dockerfile
 run:
   web: gunicorn app:app
-  worker: python logs_app.py
+  # worker: python logs_app.py
