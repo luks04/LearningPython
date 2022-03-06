@@ -1,6 +1,6 @@
 build:
   docker:
-    web: Dockerfile
+    web: src/Dockerfile
     database: database/Dockerfile
     worker: logs/Dockerfile
 run:
