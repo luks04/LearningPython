@@ -1,11 +1,8 @@
-services:
-  web:
-    build: Dockerfile
-    volumes:
-      - ./webapp:/opt/webapp
-    run: gunicorn app:app
-  database:
-    build: database/Dockerfile
-  worker:
-    build: logs/Dockerfile
-    run: python logs_app.py
+build:
+  docker:
+    web: Dockerfile
+    database: database/Dockerfile
+    worker: logs/Dockerfile
+run:
+  web: gunicorn app:app
+  worker: python logs_app.py
