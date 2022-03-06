@@ -1,11 +1,7 @@
 import os
-from rq import Queue
-from logs.logs_app import conn
 from flask import Flask, jsonify
-from utils import count_words_at_url
 
 app = Flask(__name__)
-q = Queue(connection = conn)
 
 @app.route("/api/app", methods = ['GET'])
 def api_app():
@@ -21,11 +17,6 @@ def api_app():
 @app.route("/test_app")
 def test_app():
     return "<p>Hello World from Docker 1</p>"
-
-@app.route("/test_worker")
-def test_worker():
-    result = q.enqueue(count_words_at_url, 'http://heroku.com')
-    return f"<p>Words at url: {str(result)}</p>"
 
 if __name__ == '__main__':
     port = os.environ.get('PORT', 8080) # Heroku will set the PORT environment variable
