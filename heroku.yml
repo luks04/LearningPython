@@ -5,5 +5,5 @@ build:
     worker: logs/Dockerfile
 run:
   # web: gunicorn app:app
-  web: "uwsgi --ini /app/uwsgi_config/uwsgi.ini"
+  web: uwsgi app/uwsgi.ini
   worker: python logs_app.py
