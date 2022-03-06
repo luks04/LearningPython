@@ -1,6 +1,6 @@
 import os
 from rq import Queue
-from logs.logs_app import conn
+from ..logs.logs_app import conn
 from flask import Flask, jsonify
 import requests
 
