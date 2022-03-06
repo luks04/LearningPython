@@ -7,9 +7,5 @@ WORKDIR /app
 RUN python3 -m venv env
 RUN pip install --upgrade pip
 
-RUN pip install Flask
-RUN pip install gunicorn
-RUN pip install requests
-RUN pip install rq
-
-# CMD gunicorn app:app
+RUN source env/bin/activate
+RUN pip install -r requirements.txt
