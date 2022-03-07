@@ -1,8 +1,5 @@
 build:
   docker:
-    web: Dockerfile
+    web: src/Dockerfile
     database: database/Dockerfile
     worker: logs/Dockerfile
-run:
-  web: src/Dockerfile
-  worker: python logs_app.py
